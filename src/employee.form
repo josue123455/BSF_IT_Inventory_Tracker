@@ -58,6 +58,8 @@
                           </Group>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="empWorkingHoursLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="empWorkingHoursLbl1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -71,15 +73,18 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="empLocationLbl" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="empWorkingHoursFld" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                      <Component id="empWorkingHoursLbl2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="empLocationLbl" max="32767" attributes="0"/>
+                          <Component id="empWorkingHoursFld" max="32767" attributes="0"/>
+                          <Component id="empLocationLbl1" max="32767" attributes="0"/>
+                          <Component id="empWorkingHoursFld2" max="32767" attributes="0"/>
+                          <Component id="empWorkingHoursFld1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -116,7 +121,22 @@
                   <Component id="empWorkingHoursLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="empWorkingHoursFld" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="empLocationLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="empWorkingHoursLbl1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="empWorkingHoursFld1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="empWorkingHoursLbl2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="empWorkingHoursFld2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="empAccessLevelText" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -246,6 +266,39 @@
     <Component class="javax.swing.JTextField" name="empWorkingHoursFld">
       <Properties>
         <Property name="text" type="java.lang.String" value="Employee Working Hours"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Address:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="empLocationLbl1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EmployeeAddress"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="empWorkingHoursLbl1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Email:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="empWorkingHoursFld1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EmployeeEmail"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="empWorkingHoursFld1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="empWorkingHoursLbl2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Employee Phone Number:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="empWorkingHoursFld2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="EmployeePhoneNumber"/>
       </Properties>
     </Component>
   </SubComponents>

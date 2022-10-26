@@ -62,6 +62,12 @@ public class newUser extends javax.swing.JFrame {
         empLocFld = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         empWorkingHoursFld = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        empWorkingHoursFld1 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        empWorkingHoursFld2 = new javax.swing.JTextField();
+        empWorkingHoursFld3 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +103,12 @@ public class newUser extends javax.swing.JFrame {
 
         jLabel8.setText("Employee Working Hours:");
 
+        jLabel9.setText("Employee Address\"");
+
+        jLabel10.setText("Employee Email:");
+
+        jLabel11.setText("Employee Phone Number:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,7 +126,10 @@ public class newUser extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(empLocation)
-                            .addComponent(jLabel8))
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
                         .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(empNameFld)
@@ -122,7 +137,10 @@ public class newUser extends javax.swing.JFrame {
                             .addComponent(empUserFld)
                             .addComponent(empPasswordFld, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                             .addComponent(empLocFld)
-                            .addComponent(empWorkingHoursFld)))
+                            .addComponent(empWorkingHoursFld)
+                            .addComponent(empWorkingHoursFld1)
+                            .addComponent(empWorkingHoursFld2)
+                            .addComponent(empWorkingHoursFld3)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(276, 276, 276)
                         .addComponent(createUserBtn))
@@ -134,7 +152,7 @@ public class newUser extends javax.swing.JFrame {
                             .addComponent(jRadioButton1)
                             .addComponent(jRadioButton2)
                             .addComponent(jRadioButton3))))
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +183,19 @@ public class newUser extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(empWorkingHoursFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(empWorkingHoursFld1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(empWorkingHoursFld2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(empWorkingHoursFld3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton1)
                     .addComponent(jLabel7))
@@ -252,13 +282,19 @@ public class newUser extends javax.swing.JFrame {
     private javax.swing.JTextField empSSNField;
     private javax.swing.JTextField empUserFld;
     private javax.swing.JTextField empWorkingHoursFld;
+    private javax.swing.JTextField empWorkingHoursFld1;
+    private javax.swing.JTextField empWorkingHoursFld2;
+    private javax.swing.JTextField empWorkingHoursFld3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;

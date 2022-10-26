@@ -116,7 +116,7 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Device SN:");
+        jLabel4.setText("Record Number:");
 
         searchBtn4.setText("Search");
         searchBtn4.addActionListener(new java.awt.event.ActionListener() {
@@ -429,7 +429,7 @@ public class Homepage extends javax.swing.JFrame {
             .addGroup(SuppliesPnlLayout.createSequentialGroup()
                 .addGroup(SuppliesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SuppliesPnlLayout.createSequentialGroup()
-                        .addGap(0, 14, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(SuppliesPnlLayout.createSequentialGroup()
                         .addGroup(SuppliesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
