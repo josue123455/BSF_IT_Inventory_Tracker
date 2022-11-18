@@ -12,22 +12,27 @@ import java.util.HashMap;
  */
 public class Homepage extends javax.swing.JFrame {
     Backend backend = new Backend();
-    int accessLevel;
+    String userID;
 
     /**
      * Creates new form Homepage
      * @param aL
      */
-    public Homepage(int aL) {
+    public Homepage(String userID) {
         initComponents();
-        sideBarPnl.setVisible(false);
-        SuppliesPnl.setVisible(false);
-        SuppliersPnl.setVisible(false);
-        UsersPnl.setVisible(false);
-        accessLevel = aL;
+        setPanelsInvisible();
+        this.userID = userID;
+        int accessLevel = backend.getAccessLevelByID(userID);
         if(accessLevel < backend.getMaxAccessLevel()){
             createUserBtn.setVisible(false);
         }
+    }
+    private void setPanelsInvisible(){
+        SuppliesPnl.setVisible(false);
+        SuppliersPnl.setVisible(false);
+        UsersPnl.setVisible(false);
+        MaintenancePnl.setVisible(false);
+        sideBarPnl.setVisible(false);
     }
 
     /**
@@ -43,7 +48,6 @@ public class Homepage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         MaintenancePnl = new javax.swing.JPanel();
         empIDText1 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         searchBtn4 = new javax.swing.JButton();
         createUserBtn1 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
@@ -53,6 +57,7 @@ public class Homepage extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         SuppliersPnl = new javax.swing.JPanel();
         itemText1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -99,7 +104,6 @@ public class Homepage extends javax.swing.JFrame {
         hamburgerBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
 
         jPanel1.setMaximumSize(new java.awt.Dimension(517, 436));
@@ -115,8 +119,6 @@ public class Homepage extends javax.swing.JFrame {
                 empIDText1ActionPerformed(evt);
             }
         });
-
-        jLabel4.setText("Record Number:");
 
         searchBtn4.setText("Search");
         searchBtn4.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +168,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addGap(119, 119, 119)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addComponent(jLabel20)
                 .addGap(40, 40, 40))
         );
@@ -184,13 +186,15 @@ public class Homepage extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
+        jLabel6.setText("Maintenance Number");
+
         javax.swing.GroupLayout MaintenancePnlLayout = new javax.swing.GroupLayout(MaintenancePnl);
         MaintenancePnl.setLayout(MaintenancePnlLayout);
         MaintenancePnlLayout.setHorizontalGroup(
             MaintenancePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MaintenancePnlLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jLabel4)
+                .addGap(80, 80, 80)
+                .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(empIDText1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -209,9 +213,9 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addGroup(MaintenancePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(empIDText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
                     .addComponent(searchBtn4)
-                    .addComponent(createUserBtn1))
+                    .addComponent(createUserBtn1)
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(304, Short.MAX_VALUE))
@@ -302,7 +306,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addComponent(itemText1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(searchBtn2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(60, 60, 60))
         );
@@ -367,6 +371,11 @@ public class Homepage extends javax.swing.JFrame {
         passwordLbl.setText("Password: ");
 
         viewItemLbl.setText("View");
+        viewItemLbl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewItemLblActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -539,7 +548,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addComponent(empIDText, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(searchBtn3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(createUserBtn)
                 .addGap(30, 30, 30))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -658,6 +667,7 @@ public class Homepage extends javax.swing.JFrame {
         SuppliersPnl.setVisible(false);
         UsersPnl.setVisible(false);
         sideBarPnl.setVisible(false);
+        MaintenancePnl.setVisible(false);
     }//GEN-LAST:event_viewSuppliesBtnActionPerformed
 
     private void viewUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewUserBtnActionPerformed
@@ -672,11 +682,12 @@ public class Homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_itemTextActionPerformed
 
     private void checkOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutBtnActionPerformed
-        // TODO add your handling code here:
+        checkInBtnActionPerformed(evt);
     }//GEN-LAST:event_checkOutBtnActionPerformed
 
     private void checkInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInBtnActionPerformed
-        // TODO add your handling code here:
+       CheckInOutSupply checkInOutSupply = new CheckInOutSupply(itemNameLbl.getText(), itemText.getText());
+        checkInOutSupply.setVisible(true);
     }//GEN-LAST:event_checkInBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
@@ -738,12 +749,12 @@ public class Homepage extends javax.swing.JFrame {
 
     private void viewItemLbl2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewItemLbl2ActionPerformed
         String empID = empIDText.getText();
-        employee employee = new employee(accessLevel, backend.getEmployeeNameByID(empID), empID, backend.getEmployeeSSNByID(empID), backend.getEmployeeDevicesByID(empID), backend.getAccessLevelByID(empID));
+        employee employee = new employee(backend.getAccessLevelByID(empID), backend.getEmployeeNameByID(empID), empID, backend.getEmployeeSSNByID(empID), backend.getEmployeeDevicesByID(empID), backend.getAccessLevelByID(empID));
         employee.setVisible(true);
     }//GEN-LAST:event_viewItemLbl2ActionPerformed
 
     private void createUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserBtnActionPerformed
-        newUser newUser = new newUser(accessLevel);
+        newUser newUser = new newUser(1);
         newUser.setVisible(true);
     }//GEN-LAST:event_createUserBtnActionPerformed
 
@@ -777,6 +788,10 @@ public class Homepage extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void viewItemLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewItemLblActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewItemLblActionPerformed
 
     /**
      * @param args the command line arguments
@@ -846,8 +861,8 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

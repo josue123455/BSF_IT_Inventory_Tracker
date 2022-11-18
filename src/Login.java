@@ -130,8 +130,8 @@ public class Login extends javax.swing.JFrame {
     private void LoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBtnActionPerformed
         String username = userText.getText();
         if (backend.verifyLogin(username, passText.getText())){
-            int accessLevel = backend.getAccessLevelByUsername(username);
-            Homepage hp = new Homepage(accessLevel);
+            String empID = backend.getEmployeeIDByName(username);
+            Homepage hp = new Homepage(empID);
             hp.setVisible(true);
             this.setVisible(false);
         }

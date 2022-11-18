@@ -12,8 +12,10 @@ public class CheckInOutSupply extends javax.swing.JFrame {
     /**
      * Creates new form CheckInOutSupply
      */
-    public CheckInOutSupply() {
+    public CheckInOutSupply(String sName,String sID) {
         initComponents();
+        supplyNameLbl.setText(sName);
+        supplySNLbl.setText(sID);
     }
 
     /**
@@ -25,77 +27,95 @@ public class CheckInOutSupply extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        DeviceCheckGrp = new javax.swing.ButtonGroup();
+        supplyNameLbl = new javax.swing.JLabel();
+        supplySNLbl = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        checkInOutBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        checkInBtn = new javax.swing.JRadioButton();
+        checkOutBtn = new javax.swing.JRadioButton();
+        maintenanceBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setText("Supply Name");
+        supplyNameLbl.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        supplyNameLbl.setText("Supply Name");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setText("Supply Serial number");
+        supplySNLbl.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        supplySNLbl.setText("Supply Serial number");
 
         jLabel3.setText("Time Checked In/Out(Changes based on type)");
 
-        jButton1.setText("Check In/Out (Changes based on type)");
+        checkInOutBtn.setText("Check In/Out (Changes based on type)");
+        checkInOutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkInOutBtnActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Condition:");
 
-        jLabel5.setText("Maintenance Needed(If yes, maintenace pop up)?");
+        DeviceCheckGrp.add(checkInBtn);
+        checkInBtn.setText("Check In");
 
-        jRadioButton1.setText("Yes");
+        DeviceCheckGrp.add(checkOutBtn);
+        checkOutBtn.setText("Check Out");
+        checkOutBtn.setToolTipText("");
 
-        jRadioButton2.setText("No");
+        maintenanceBtn.setText("Maintenance?");
+        maintenanceBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maintenanceBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(129, 129, 129))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(106, 106, 106)
-                        .addComponent(jLabel1))
+                        .addComponent(supplyNameLbl))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(checkInBtn)
+                                .addGap(96, 96, 96)
+                                .addComponent(checkOutBtn))
+                            .addComponent(checkInOutBtn)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                                .addComponent(jTextField2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addComponent(jButton1)))
+                            .addComponent(jLabel4))
+                        .addGap(65, 65, 65)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                            .addComponent(jTextField2))))
                 .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(supplySNLbl)
+                        .addGap(129, 129, 129))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(maintenanceBtn)
+                        .addGap(196, 196, 196))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(supplyNameLbl)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(supplySNLbl)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -104,19 +124,28 @@ public class CheckInOutSupply extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jRadioButton1)
-                        .addComponent(jRadioButton2)))
-                .addGap(29, 29, 29)
-                .addComponent(jButton1)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addComponent(maintenanceBtn)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkInBtn)
+                    .addComponent(checkOutBtn))
+                .addGap(18, 18, 18)
+                .addComponent(checkInOutBtn)
+                .addGap(32, 32, 32))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void maintenanceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maintenanceBtnActionPerformed
+        maintenance maintenance = new maintenance();
+        maintenance.setVisible(true);
+    }//GEN-LAST:event_maintenanceBtnActionPerformed
+
+    private void checkInOutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInOutBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_checkInOutBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,21 +177,22 @@ public class CheckInOutSupply extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CheckInOutSupply().setVisible(true);
+                new CheckInOutSupply("","").setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.ButtonGroup DeviceCheckGrp;
+    private javax.swing.JRadioButton checkInBtn;
+    private javax.swing.JButton checkInOutBtn;
+    private javax.swing.JRadioButton checkOutBtn;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton maintenanceBtn;
+    private javax.swing.JLabel supplyNameLbl;
+    private javax.swing.JLabel supplySNLbl;
     // End of variables declaration//GEN-END:variables
 }

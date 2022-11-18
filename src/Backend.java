@@ -83,5 +83,8 @@ public class Backend {
     //Employee ID should be randomly generated with specific parameters.
     public void createEmployee(String name, String SSN, String username, String password, String location, int workingHours, int accessLevel){
     }
+    //Updates the device either checking it in or out.
+    public void checkDevice(String ID,String empID, String time, String condition, boolean checkedIn){
+    }
     
 }
