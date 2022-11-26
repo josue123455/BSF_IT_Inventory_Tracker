@@ -19,9 +19,11 @@ public class Backend {
     }
     //TODO returns a HashMap with varying values depending on the given type. I'd recommend Helper Functions.
     //Using the given ID
+    //ID could be a name in the case of suppliers.
     //If type is "supplies" return a hashmap with {Name, Model, Device, Owner, Password}
     //If type is "suppliers" return a hashmap with {Name, Address, Phone, Email, itemsSupplied}
     //If type is "users" return a hashmap with {Name, Devices}.
+    //If type is "maitenance" return a hashmap with {issue, cost, fixedBy, deviceSN, fixedDate}
     //If type does not equal any of the above return null.
     public HashMap<String,String> fetchPnlObjectItems(String ID, String type){
         return null;
@@ -87,9 +89,23 @@ public class Backend {
     public void checkDevice(String ID,String empID, String time, String condition, boolean checkedIn){
     }
     //Returns information about the device. This should be a hashmap with the following values.
-    //{deviceType, warrantyExpiration, barcode, model, SN, dateAcquired, cost, condition, knownIssues, status, password, hasKeyboard, hasMouse, weight, maintenanceRecord}.
+    //{deviceType, warrantyExpiration, barcode, model, SN, dateAcquired, cost, condition, knownIssues, status, password, hasKeyboard, hasMouse, weight}.
+    //For has keyboard and has mouse should return "Yes" or "No".
     public HashMap<String,String> getDeviceInformation(String ID){
         return null;
+    }
+    //Updates the device information given the ID and the hashmap of values.
+    //HashMap values are {deviceType, warrantyExpiration, barcode, model, SN, dateAcquired, cost, condition, knownIssues, status, password, hasKeyboard, hasMouse, weight}.
+    public void updateDeviceInformation(String ID, HashMap<String,String> deviceInfo){
+    }
+    //Returns a HashMap of Supplier information given the name.
+    //{address, phone, devicesSupplied, email}
+    //devicesSupplied should be a comma separated list of devices.
+    public HashMap<String,String> getSupplierInformation(String name){
+        return null;
+    }
+    //Removes a supplier from the Database given the name.
+    public void deleteSupplier(String name){
     }
     
 }

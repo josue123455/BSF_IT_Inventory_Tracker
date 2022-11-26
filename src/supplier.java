@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,12 +10,19 @@
  * @author jmulh
  */
 public class supplier extends javax.swing.JFrame {
-
+    Backend backend = new Backend();
+    String supplier = "";
     /**
      * Creates new form supplier
      */
-    public supplier() {
+    public supplier(String name) {
+        supplier = name;
+        HashMap<String,String> supplier = backend.getSupplierInformation(name);
         initComponents();
+        phoneNumberLbl.setText(supplier.get("Phone"));
+        addressLbl.setText(supplier.get("Address"));
+        emailLbl.setText(supplier.get("Email"));
+        devicesSuppliedLbl.setText(supplier.get("devicesSupplied"));
     }
 
     /**
@@ -27,14 +36,14 @@ public class supplier extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        phoneNumberLbl = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        addressLbl = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        devicesSuppliedLbl = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        emailLbl = new javax.swing.JLabel();
+        deleteSupplierBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,21 +52,26 @@ public class supplier extends javax.swing.JFrame {
 
         jLabel2.setText("Phone Number:");
 
-        jLabel3.setText("#################");
+        phoneNumberLbl.setText("#################");
 
         jLabel4.setText("Address:");
 
-        jLabel5.setText("Address");
+        addressLbl.setText("Address");
 
         jLabel6.setText("Devices Supplied:");
 
-        jLabel7.setText("List of Devices");
+        devicesSuppliedLbl.setText("List of Devices");
 
         jLabel8.setText("email:");
 
-        jLabel9.setText("HyperLinked Email");
+        emailLbl.setText("HyperLinked Email");
 
-        jButton1.setText("Delete Supplier");
+        deleteSupplierBtn.setText("Delete Supplier");
+        deleteSupplierBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteSupplierBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,14 +86,14 @@ public class supplier extends javax.swing.JFrame {
                         .addGap(179, 179, 179)
                         .addComponent(jLabel4)
                         .addGap(192, 192, 192)
-                        .addComponent(jLabel5))
+                        .addComponent(addressLbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(106, 106, 106)
-                                .addComponent(jLabel3))
+                                .addComponent(phoneNumberLbl))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
@@ -89,13 +103,13 @@ public class supplier extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(136, 136, 136)
-                                        .addComponent(jLabel7))
+                                        .addComponent(devicesSuppliedLbl))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel9))))))
+                                        .addComponent(emailLbl))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(241, 241, 241)
-                        .addComponent(jButton1)))
+                        .addComponent(deleteSupplierBtn)))
                 .addContainerGap(127, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -106,26 +120,31 @@ public class supplier extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(phoneNumberLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(addressLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(devicesSuppliedLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel9))
+                    .addComponent(emailLbl))
                 .addGap(87, 87, 87)
-                .addComponent(jButton1)
+                .addComponent(deleteSupplierBtn)
                 .addContainerGap(158, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void deleteSupplierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteSupplierBtnActionPerformed
+        backend.deleteSupplier(supplier);
+        this.setVisible(false);
+    }//GEN-LAST:event_deleteSupplierBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,15 +182,15 @@ public class supplier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel addressLbl;
+    private javax.swing.JButton deleteSupplierBtn;
+    private javax.swing.JLabel devicesSuppliedLbl;
+    private javax.swing.JLabel emailLbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel phoneNumberLbl;
     // End of variables declaration//GEN-END:variables
 }

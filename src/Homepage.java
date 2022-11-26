@@ -47,19 +47,19 @@ public class Homepage extends javax.swing.JFrame {
         jProgressBar1 = new javax.swing.JProgressBar();
         jPanel1 = new javax.swing.JPanel();
         MaintenancePnl = new javax.swing.JPanel();
-        empIDText1 = new javax.swing.JTextField();
+        mtncIDTxt = new javax.swing.JTextField();
         searchBtn4 = new javax.swing.JButton();
-        createUserBtn1 = new javax.swing.JButton();
+        createRepairBtn = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        issueLbl = new javax.swing.JLabel();
+        costLbl = new javax.swing.JLabel();
+        fixedByLbl = new javax.swing.JLabel();
+        fixedDateLbl = new javax.swing.JLabel();
+        deviceSNLbl = new javax.swing.JLabel();
+        showMaitenanceBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         SuppliersPnl = new javax.swing.JPanel();
-        itemText1 = new javax.swing.JTextField();
+        supplierTxt = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         supplierNameLbl = new javax.swing.JLabel();
@@ -67,13 +67,13 @@ public class Homepage extends javax.swing.JFrame {
         supplierAddressLbl = new javax.swing.JLabel();
         supplierEmailLbl = new javax.swing.JLabel();
         suppliesLbl = new javax.swing.JLabel();
-        viewItemLbl1 = new javax.swing.JButton();
+        viewSupplierBtn = new javax.swing.JButton();
         searchBtn2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        createSupplierBtn = new javax.swing.JButton();
         SuppliesPnl = new javax.swing.JPanel();
         searchBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        itemText = new javax.swing.JTextField();
+        supplyTxt = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         checkOutBtn = new javax.swing.JButton();
         checkInBtn = new javax.swing.JButton();
@@ -84,7 +84,7 @@ public class Homepage extends javax.swing.JFrame {
         passwordLbl = new javax.swing.JLabel();
         viewItemBtn = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        registerSupply = new javax.swing.JButton();
         UsersPnl = new javax.swing.JPanel();
         empIDText = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -114,9 +114,9 @@ public class Homepage extends javax.swing.JFrame {
         MaintenancePnl.setMaximumSize(new java.awt.Dimension(517, 436));
         MaintenancePnl.setPreferredSize(new java.awt.Dimension(517, 436));
 
-        empIDText1.addActionListener(new java.awt.event.ActionListener() {
+        mtncIDTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                empIDText1ActionPerformed(evt);
+                mtncIDTxtActionPerformed(evt);
             }
         });
 
@@ -127,29 +127,29 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        createUserBtn1.setText("Register Repair");
-        createUserBtn1.addActionListener(new java.awt.event.ActionListener() {
+        createRepairBtn.setText("Register Repair");
+        createRepairBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createUserBtn1ActionPerformed(evt);
+                createRepairBtnActionPerformed(evt);
             }
         });
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel17.setText("Issue");
+        issueLbl.setText("Issue");
 
-        jLabel18.setText("Cost");
+        costLbl.setText("Cost");
 
-        jLabel19.setText("Fixed By");
+        fixedByLbl.setText("Fixed By");
 
-        jLabel20.setText("When It was Fixed?");
+        fixedDateLbl.setText("When It was Fixed?");
 
-        jLabel5.setText("Device SN");
+        deviceSNLbl.setText("Device SN");
 
-        jButton3.setText("Update");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        showMaitenanceBtn.setText("Update");
+        showMaitenanceBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                showMaitenanceBtnActionPerformed(evt);
             }
         });
 
@@ -159,17 +159,17 @@ public class Homepage extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3)
+                .addComponent(showMaitenanceBtn)
                 .addGap(27, 27, 27)
-                .addComponent(jLabel17)
+                .addComponent(issueLbl)
                 .addGap(27, 27, 27)
-                .addComponent(jLabel18)
+                .addComponent(costLbl)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel19)
+                .addComponent(fixedByLbl)
                 .addGap(119, 119, 119)
-                .addComponent(jLabel5)
+                .addComponent(deviceSNLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(jLabel20)
+                .addComponent(fixedDateLbl)
                 .addGap(40, 40, 40))
         );
         jPanel8Layout.setVerticalGroup(
@@ -177,12 +177,12 @@ public class Homepage extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel5)
-                    .addComponent(jButton3))
+                    .addComponent(issueLbl)
+                    .addComponent(costLbl)
+                    .addComponent(fixedByLbl)
+                    .addComponent(fixedDateLbl)
+                    .addComponent(deviceSNLbl)
+                    .addComponent(showMaitenanceBtn))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -196,11 +196,11 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(80, 80, 80)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
-                .addComponent(empIDText1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mtncIDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(searchBtn4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(createUserBtn1)
+                .addComponent(createRepairBtn)
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MaintenancePnlLayout.createSequentialGroup()
                 .addContainerGap()
@@ -212,9 +212,9 @@ public class Homepage extends javax.swing.JFrame {
             .addGroup(MaintenancePnlLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(MaintenancePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(empIDText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mtncIDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBtn4)
-                    .addComponent(createUserBtn1)
+                    .addComponent(createRepairBtn)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -227,9 +227,9 @@ public class Homepage extends javax.swing.JFrame {
         SuppliersPnl.setOpaque(false);
         SuppliersPnl.setPreferredSize(new java.awt.Dimension(517, 436));
 
-        itemText1.addActionListener(new java.awt.event.ActionListener() {
+        supplierTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemText1ActionPerformed(evt);
+                supplierTxtActionPerformed(evt);
             }
         });
 
@@ -247,7 +247,12 @@ public class Homepage extends javax.swing.JFrame {
 
         suppliesLbl.setText("Supplies:");
 
-        viewItemLbl1.setText("View");
+        viewSupplierBtn.setText("View");
+        viewSupplierBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewSupplierBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -255,7 +260,7 @@ public class Homepage extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(viewItemLbl1)
+                .addComponent(viewSupplierBtn)
                 .addGap(76, 76, 76)
                 .addComponent(supplierNameLbl)
                 .addGap(18, 18, 18)
@@ -278,7 +283,7 @@ public class Homepage extends javax.swing.JFrame {
                     .addComponent(supplierAddressLbl)
                     .addComponent(supplierEmailLbl)
                     .addComponent(suppliesLbl)
-                    .addComponent(viewItemLbl1))
+                    .addComponent(viewSupplierBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -289,7 +294,12 @@ public class Homepage extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Create Supplier");
+        createSupplierBtn.setText("Create Supplier");
+        createSupplierBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createSupplierBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SuppliersPnlLayout = new javax.swing.GroupLayout(SuppliersPnl);
         SuppliersPnl.setLayout(SuppliersPnlLayout);
@@ -303,11 +313,11 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(itemText1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(supplierTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(searchBtn2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(createSupplierBtn)
                 .addGap(60, 60, 60))
         );
         SuppliersPnlLayout.setVerticalGroup(
@@ -316,9 +326,9 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(SuppliersPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(itemText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supplierTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBtn2)
-                    .addComponent(jButton1))
+                    .addComponent(createSupplierBtn))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -338,9 +348,9 @@ public class Homepage extends javax.swing.JFrame {
 
         jLabel1.setText("Item SN:");
 
-        itemText.addActionListener(new java.awt.event.ActionListener() {
+        supplyTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemTextActionPerformed(evt);
+                supplyTxtActionPerformed(evt);
             }
         });
 
@@ -429,7 +439,12 @@ public class Homepage extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jButton2.setText("Register Supply");
+        registerSupply.setText("Register Supply");
+        registerSupply.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerSupplyActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout SuppliesPnlLayout = new javax.swing.GroupLayout(SuppliesPnl);
         SuppliesPnl.setLayout(SuppliesPnlLayout);
@@ -449,11 +464,11 @@ public class Homepage extends javax.swing.JFrame {
                                 .addGap(66, 66, 66)
                                 .addComponent(jLabel1)
                                 .addGap(36, 36, 36)
-                                .addComponent(itemText, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(supplyTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(27, 27, 27)
                                 .addComponent(searchBtn)
                                 .addGap(41, 41, 41)
-                                .addComponent(jButton2)))
+                                .addComponent(registerSupply)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -463,9 +478,9 @@ public class Homepage extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addGroup(SuppliesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(itemText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supplyTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchBtn)
-                    .addComponent(jButton2))
+                    .addComponent(registerSupply))
                 .addGap(30, 30, 30)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(785, 785, 785)
@@ -686,6 +701,7 @@ public class Homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_checkInBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        System.out.println("Searched");
         String dataRequested = "";
         if(SuppliesPnl.isVisible()){
             dataRequested = "supplies";
@@ -695,6 +711,9 @@ public class Homepage extends javax.swing.JFrame {
         }
         else if (SuppliersPnl.isVisible()){
             dataRequested = "suppliers";
+        }
+        else if (MaintenancePnl.isVisible()){
+            dataRequested = "maintenance";
         }
         else{
             System.out.println("Error: No panel is visible");
@@ -718,6 +737,14 @@ public class Homepage extends javax.swing.JFrame {
             if(dataRequested.equals("users")){
                 empNameLbl.setText(result.get("Name"));
                 empDevicesLbl.setText(result.get("Devices"));
+            }
+            if(dataRequested.equals("maintenance")){
+                issueLbl.setText("issue");
+                costLbl.setText("cost");
+                fixedByLbl.setText("fixedBy");
+                deviceSNLbl.setText("deviceSN");
+                fixedDateLbl.setText("fixedDate");
+
             }
         }
     }//GEN-LAST:event_searchBtnActionPerformed
@@ -769,26 +796,44 @@ public class Homepage extends javax.swing.JFrame {
         MaintenancePnl.setVisible(true);
     }//GEN-LAST:event_viewRepairsBtnActionPerformed
 
-    private void createUserBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_createUserBtn1ActionPerformed
+    private void createRepairBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createRepairBtnActionPerformed
+        maintenance maintenance = new maintenance();
+        maintenance.setVisible(true);
+    }//GEN-LAST:event_createRepairBtnActionPerformed
 
     private void searchBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtn4ActionPerformed
-        // TODO add your handling code here:
+        searchBtnActionPerformed(evt);
     }//GEN-LAST:event_searchBtn4ActionPerformed
 
     private void empIDText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empIDText1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_empIDText1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void showMaitenanceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showMaitenanceBtnActionPerformed
+        maintenance maintenance = new maintenance(mtncIDTxt.getText());
+        maintenance.setVisible(true);
+        
+    }//GEN-LAST:event_showMaitenanceBtnActionPerformed
 
     private void viewItemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewItemBtnActionPerformed
         supply supply = new supply(itemText.getText());
         supply.setVisible(true);
     }//GEN-LAST:event_viewItemBtnActionPerformed
+
+    private void registerSupplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerSupplyActionPerformed
+        newSupply newSupply = new newSupply();
+        newSupply.setVisible(true);
+    }//GEN-LAST:event_registerSupplyActionPerformed
+
+    private void viewSupplierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewSupplierBtnActionPerformed
+        supplier supplier = new supplier(supplierNameLbl.getText());
+        supplier.setVisible(true);
+    }//GEN-LAST:event_viewSupplierBtnActionPerformed
+
+    private void createSupplierBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createSupplierBtnActionPerformed
+        newSupplier newSupplier = new newSupplier();
+        newSupplier.setVisible(true);
+    }//GEN-LAST:event_createSupplierBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -833,30 +878,25 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JButton ViewSuppliersBtn;
     private javax.swing.JButton checkInBtn;
     private javax.swing.JButton checkOutBtn;
+    private javax.swing.JLabel costLbl;
+    private javax.swing.JButton createRepairBtn;
+    private javax.swing.JButton createSupplierBtn;
     private javax.swing.JButton createUserBtn;
-    private javax.swing.JButton createUserBtn1;
     private javax.swing.JLabel currOwnerLbl;
     private javax.swing.JLabel deviceLbl;
+    private javax.swing.JLabel deviceSNLbl;
     private javax.swing.JLabel empDevicesLbl;
     private javax.swing.JTextField empIDText;
-    private javax.swing.JTextField empIDText1;
     private javax.swing.JLabel empNameLbl;
+    private javax.swing.JLabel fixedByLbl;
+    private javax.swing.JLabel fixedDateLbl;
     private javax.swing.JButton hamburgerBtn;
+    private javax.swing.JLabel issueLbl;
     private javax.swing.JLabel itemModelLbl;
     private javax.swing.JLabel itemNameLbl;
-    private javax.swing.JTextField itemText;
-    private javax.swing.JTextField itemText1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -866,22 +906,27 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JTextField mtncIDTxt;
     private javax.swing.JLabel passwordLbl;
+    private javax.swing.JButton registerSupply;
     private javax.swing.JButton searchBtn;
     private javax.swing.JButton searchBtn2;
     private javax.swing.JButton searchBtn3;
     private javax.swing.JButton searchBtn4;
+    private javax.swing.JButton showMaitenanceBtn;
     private javax.swing.JPanel sideBarPnl;
     private javax.swing.JLabel supplierAddressLbl;
     private javax.swing.JLabel supplierEmailLbl;
     private javax.swing.JLabel supplierNameLbl;
     private javax.swing.JLabel supplierPhoneLbl;
+    private javax.swing.JTextField supplierTxt;
     private javax.swing.JLabel suppliesLbl;
+    private javax.swing.JTextField supplyTxt;
     private javax.swing.JButton viewItemBtn;
-    private javax.swing.JButton viewItemLbl1;
     private javax.swing.JButton viewItemLbl2;
     private javax.swing.JButton viewRepairsBtn;
     private javax.swing.JButton viewRostersBtn;
+    private javax.swing.JButton viewSupplierBtn;
     private javax.swing.JButton viewSuppliesBtn;
     private javax.swing.JButton viewUserBtn;
     // End of variables declaration//GEN-END:variables

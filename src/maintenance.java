@@ -12,7 +12,11 @@ public class maintenance extends javax.swing.JFrame {
     /**
      * Creates new form maintenance
      */
-    public maintenance() {
+    public maintenance(String ID) {
+        initComponents();
+    }
+    
+    public maintenance(){
         initComponents();
     }
 
