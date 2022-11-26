@@ -82,7 +82,7 @@ public class Homepage extends javax.swing.JFrame {
         deviceLbl = new javax.swing.JLabel();
         currOwnerLbl = new javax.swing.JLabel();
         passwordLbl = new javax.swing.JLabel();
-        viewItemLbl = new javax.swing.JButton();
+        viewItemBtn = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         UsersPnl = new javax.swing.JPanel();
@@ -99,8 +99,8 @@ public class Homepage extends javax.swing.JFrame {
         viewSuppliesBtn = new javax.swing.JButton();
         viewUserBtn = new javax.swing.JButton();
         ViewSuppliersBtn = new javax.swing.JButton();
-        ViewSuppliersBtn1 = new javax.swing.JButton();
-        ViewSuppliersBtn2 = new javax.swing.JButton();
+        viewRostersBtn = new javax.swing.JButton();
+        viewRepairsBtn = new javax.swing.JButton();
         hamburgerBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -370,10 +370,10 @@ public class Homepage extends javax.swing.JFrame {
 
         passwordLbl.setText("Password: ");
 
-        viewItemLbl.setText("View");
-        viewItemLbl.addActionListener(new java.awt.event.ActionListener() {
+        viewItemBtn.setText("View");
+        viewItemBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewItemLblActionPerformed(evt);
+                viewItemBtnActionPerformed(evt);
             }
         });
 
@@ -397,7 +397,7 @@ public class Homepage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(passwordLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(viewItemLbl)
+                .addComponent(viewItemBtn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -411,7 +411,7 @@ public class Homepage extends javax.swing.JFrame {
                         .addComponent(itemNameLbl)
                         .addComponent(itemModelLbl)
                         .addComponent(passwordLbl)
-                        .addComponent(viewItemLbl))
+                        .addComponent(viewItemBtn))
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(checkOutBtn)
                         .addComponent(checkInBtn)))
@@ -600,24 +600,24 @@ public class Homepage extends javax.swing.JFrame {
         });
         sideBarPnl.add(ViewSuppliersBtn);
 
-        ViewSuppliersBtn1.setText("View Rosters");
-        ViewSuppliersBtn1.setPreferredSize(new java.awt.Dimension(125, 23));
-        ViewSuppliersBtn1.addActionListener(new java.awt.event.ActionListener() {
+        viewRostersBtn.setText("View Rosters");
+        viewRostersBtn.setPreferredSize(new java.awt.Dimension(125, 23));
+        viewRostersBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewSuppliersBtn1ActionPerformed(evt);
+                viewRostersBtnActionPerformed(evt);
             }
         });
-        sideBarPnl.add(ViewSuppliersBtn1);
+        sideBarPnl.add(viewRostersBtn);
 
-        ViewSuppliersBtn2.setText("View Repairs");
-        ViewSuppliersBtn2.setMaximumSize(new java.awt.Dimension(127, 180));
-        ViewSuppliersBtn2.setPreferredSize(new java.awt.Dimension(125, 23));
-        ViewSuppliersBtn2.addActionListener(new java.awt.event.ActionListener() {
+        viewRepairsBtn.setText("View Repairs");
+        viewRepairsBtn.setMaximumSize(new java.awt.Dimension(127, 180));
+        viewRepairsBtn.setPreferredSize(new java.awt.Dimension(125, 23));
+        viewRepairsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewSuppliersBtn2ActionPerformed(evt);
+                viewRepairsBtnActionPerformed(evt);
             }
         });
-        sideBarPnl.add(ViewSuppliersBtn2);
+        sideBarPnl.add(viewRepairsBtn);
 
         hamburgerBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/icons8-menu-30.png"))); // NOI18N
         hamburgerBtn.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -663,18 +663,13 @@ public class Homepage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewSuppliesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewSuppliesBtnActionPerformed
+        setPanelsInvisible();
         SuppliesPnl.setVisible(true);
-        SuppliersPnl.setVisible(false);
-        UsersPnl.setVisible(false);
-        sideBarPnl.setVisible(false);
-        MaintenancePnl.setVisible(false);
     }//GEN-LAST:event_viewSuppliesBtnActionPerformed
 
     private void viewUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewUserBtnActionPerformed
+        setPanelsInvisible();
         UsersPnl.setVisible(true);
-        SuppliersPnl.setVisible(false);
-        SuppliesPnl.setVisible(false);
-        sideBarPnl.setVisible(false);
     }//GEN-LAST:event_viewUserBtnActionPerformed
 
     private void itemTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemTextActionPerformed
@@ -759,19 +754,20 @@ public class Homepage extends javax.swing.JFrame {
     }//GEN-LAST:event_createUserBtnActionPerformed
 
     private void ViewSuppliersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewSuppliersBtnActionPerformed
+        setPanelsInvisible();
         SuppliersPnl.setVisible(true);
-        UsersPnl.setVisible(false);
-        SuppliesPnl.setVisible(false);
-        sideBarPnl.setVisible(false);
     }//GEN-LAST:event_ViewSuppliersBtnActionPerformed
 
-    private void ViewSuppliersBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewSuppliersBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ViewSuppliersBtn1ActionPerformed
+    private void viewRostersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRostersBtnActionPerformed
+        setPanelsInvisible();
+        supplyRoster supplyRoster = new supplyRoster();
+        supplyRoster.setVisible(true);
+    }//GEN-LAST:event_viewRostersBtnActionPerformed
 
-    private void ViewSuppliersBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewSuppliersBtn2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ViewSuppliersBtn2ActionPerformed
+    private void viewRepairsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRepairsBtnActionPerformed
+        setPanelsInvisible();
+        MaintenancePnl.setVisible(true);
+    }//GEN-LAST:event_viewRepairsBtnActionPerformed
 
     private void createUserBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserBtn1ActionPerformed
         // TODO add your handling code here:
@@ -789,9 +785,10 @@ public class Homepage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void viewItemLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewItemLblActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_viewItemLblActionPerformed
+    private void viewItemBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewItemBtnActionPerformed
+        supply supply = new supply(itemText.getText());
+        supply.setVisible(true);
+    }//GEN-LAST:event_viewItemBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -834,8 +831,6 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JPanel SuppliesPnl;
     private javax.swing.JPanel UsersPnl;
     private javax.swing.JButton ViewSuppliersBtn;
-    private javax.swing.JButton ViewSuppliersBtn1;
-    private javax.swing.JButton ViewSuppliersBtn2;
     private javax.swing.JButton checkInBtn;
     private javax.swing.JButton checkOutBtn;
     private javax.swing.JButton createUserBtn;
@@ -882,9 +877,11 @@ public class Homepage extends javax.swing.JFrame {
     private javax.swing.JLabel supplierNameLbl;
     private javax.swing.JLabel supplierPhoneLbl;
     private javax.swing.JLabel suppliesLbl;
-    private javax.swing.JButton viewItemLbl;
+    private javax.swing.JButton viewItemBtn;
     private javax.swing.JButton viewItemLbl1;
     private javax.swing.JButton viewItemLbl2;
+    private javax.swing.JButton viewRepairsBtn;
+    private javax.swing.JButton viewRostersBtn;
     private javax.swing.JButton viewSuppliesBtn;
     private javax.swing.JButton viewUserBtn;
     // End of variables declaration//GEN-END:variables

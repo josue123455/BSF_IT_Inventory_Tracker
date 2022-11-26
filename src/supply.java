@@ -8,11 +8,12 @@
  * @author jmulh
  */
 public class supply extends javax.swing.JFrame {
-
+    Backend backend = new Backend();
     /**
      * Creates new form supply
      */
-    public supply() {
+    public supply(String supplyID) {
+        fillFields(backend.getSupplyBydID(supplyID));
         initComponents();
     }
 

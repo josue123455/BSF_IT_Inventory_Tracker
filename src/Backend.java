@@ -86,5 +86,10 @@ public class Backend {
     //Updates the device either checking it in or out.
     public void checkDevice(String ID,String empID, String time, String condition, boolean checkedIn){
     }
+    //Returns information about the device. This should be a hashmap with the following values.
+    //{deviceType, warrantyExpiration, barcode, model, SN, dateAcquired, cost, condition, knownIssues, status, password, hasKeyboard, hasMouse, weight, maintenanceRecord}.
+    public HashMap<String,String> getDeviceInformation(String ID){
+        return null;
+    }
     
 }
